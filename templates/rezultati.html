@@ -10,7 +10,7 @@
   </head>
   <body class="bg-light">
       <a href="./">iet uz ievadīšanu</a>
-      
+
         <div id="meklētājs">
             <!--Meklēšanas vieta-->
             <form method="POST">
@@ -41,6 +41,33 @@
         <p>
             {{linijas}}
         </p>
+        <div id="rezultati">
+            <table class="table-sm table-bordered table-striped">
+              <tr class="sticky-top">
+                <th>Nr.p.k.</th>
+                <th>Nr. (datubāzē speciālais)</th>
+                <th>saite</th>
+                <th>Nosaukums</th>
+                <th>Anotācija</th>
+                <th>Pašlaik pieliktais tips</th>
+              </tr>
+              {%for linija in linijas %}
+              <tr>
+                <td>{{loop.index}}</td>
+                {% for vards in linija %}
+                <td>
+                  {% if linija[vards] == None %}
+                    Nav ierakstīts
+                  {% else %}
+                    {{linija[vards]}}
+                  {% endif %}
+                </td>
+                {% endfor %}
+              </tr>
+              {% endfor %}
+            </table>
+          </div>  
+    
     </body>
 </html>
 
