@@ -55,7 +55,7 @@
                 <td>{{loop.index}}</td>
                 {% for vards in linija %}
                 <td>
-                    {%if loop.index==1%}
+                    {%if loop.index==2%}
                         <a href='{{linija[vards]}}'>
                     {%endif%}
                   {% if linija[vards] == None %}
@@ -63,7 +63,7 @@
                   {% else %}
                     {{linija[vards]}}
                   {% endif %}
-                  {%if loop.index==1%}
+                  {%if loop.index==2%}
                         </a>
               {%endif%}
           </td>
