@@ -47,8 +47,12 @@ def suutiit():
     data.ierakstit(parametri)
     return data.test_connection()
 
-@app.route('/mekletajs')
+@app.route('/mekletajs', methods=['POST', 'GET'])
 def meklet():
-    return render_template('rezultati.html')
+    if request.method == 'POST':
+        rezultats='Nekas'
+    else:
+        rezultats='Sakums'
+    return render_template('rezultati.html', linijas=rezultats)
 
 
