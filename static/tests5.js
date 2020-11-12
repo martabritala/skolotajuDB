@@ -3,7 +3,6 @@ class Tests4{
         this.konteiners=document.getElementById(id);
         let divForma = document.createElement("div");
         divForma.id="popupforma";
-        divForma.classList.add("fixed-bottom","row");
         divForma.appendChild(document.createElement("div"));
         divForma.children[0].classList.add("col-6")
         let forma = document.createElement("form");
@@ -83,7 +82,7 @@ class Tests4{
         stunduskaiti.name="stunduskaits[]";
         forma.appendChild(stunduskaiti);
         divForma.appendChild(forma);
-        document.body.appendChild(divForma);
+        this.konteiners.appendChild(divForma);
 
     }
 
