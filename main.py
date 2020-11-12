@@ -57,7 +57,7 @@ def meklet():
         ManaIzvele=int(request.form['izvele'])
         MansTeksts=request.form['teksts']
         MansObjekts=objekts(ManaIzvele,MansTeksts)
-        rezultats="Nosutits"
+        rezultats=data.nolasit()
     else:
         rezultats=data.nolasit()
     return render_template('rezultati.html', linijas=rezultats)
