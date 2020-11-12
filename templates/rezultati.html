@@ -49,9 +49,11 @@
                 <th>Nosaukums</th>
                 <th>Anotācija</th>
                 {%for kategorija in kategs%}
+                {%for vards in kategorija%}
                 <th>
-                    {{kategs[kategorija]}}
+                    {{kategorija[vards]}}
                 </th>
+                {%endfor%}
                 {%endfor%}
               </tr>
               {%for linija in linijas %}
