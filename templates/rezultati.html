@@ -39,7 +39,6 @@
             </form>
         </div>
         <p>
-            {{linijas}}
         </p>
         <div id="rezultati">
             <table class="table-sm table-bordered table-striped">
@@ -56,12 +55,18 @@
                 <td>{{loop.index}}</td>
                 {% for vards in linija %}
                 <td>
+                    {%if loop.index==1%}
+                        <a href='{{linija[vards]}}'>
+                    {%endif%}
                   {% if linija[vards] == None %}
                     Nav ierakstīts
                   {% else %}
                     {{linija[vards]}}
                   {% endif %}
-                </td>
+                  {%if loop.index==1%}
+                        </a>
+              {%endif%}
+          </td>
                 {% endfor %}
               </tr>
               {% endfor %}
