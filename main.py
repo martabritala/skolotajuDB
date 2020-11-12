@@ -17,9 +17,11 @@ app = Flask('app')
 def index_lapa():
     if request.method=='POST':
         elementi='Nosutijas'
+        kategorijas=data.nolasit(1)
     else:
         elementi=''
-    return render_template('index.html',teksts=elementi)
+        kategorijas=data.nolasit(1)
+    return render_template('index.html',teksts=elementi, kategs=kategorijas)
 
 # @app.route('/gatavs', methods=['POST', 'GET'])
 # def gatavs():
@@ -58,8 +60,10 @@ def meklet():
         # MansTeksts=request.form['teksts']
         # MansObjekts=objekts(ManaIzvele,MansTeksts)
         rezultats=data.nolasit()
+        kategorijas=data.nolasit(1)
     else:
         rezultats=data.nolasit()
-    return render_template('rezultati.html', linijas=rezultats)
+        kategorijas=data.nolasit(1)
+    return render_template('rezultati.html', linijas=rezultats, kategs=kategorijas)
 
 

@@ -48,7 +48,11 @@
                 <th>saite</th>
                 <th>Nosaukums</th>
                 <th>Anotācija</th>
-                <th>Pašlaik pieliktais tips</th>
+                {%for kategorija in kategs%}
+                <th>
+                    {{kategorija[name]}}
+                </th>
+                {%endfor%}
               </tr>
               {%for linija in linijas %}
               <tr>
