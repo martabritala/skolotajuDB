@@ -54,9 +54,9 @@ def test():
 @app.route('/mekletajs', methods=['POST', 'GET'])
 def meklet():
     if request.method == 'POST':
-        ManaIzvele=int(request.form['izvele'])
-        MansTeksts=request.form['teksts']
-        MansObjekts=objekts(ManaIzvele,MansTeksts)
+        # ManaIzvele=int(request.form['izvele'])
+        # MansTeksts=request.form['teksts']
+        # MansObjekts=objekts(ManaIzvele,MansTeksts)
         rezultats=data.nolasit()
     else:
         rezultats=data.nolasit()
