@@ -52,37 +52,6 @@ class Tests4{
         labelKrievu.innerHTML="Krievu valoda";
         forma.appendChild(labelKrievu);
         let divtresaval = document.createElement("div");
-        if (document.getElementById("izvele19").selectedIndex==1){
-            divtresaval.id = "tresavaloda";
-            divtresaval.innerHTML="<h4> Izvēlieties trešo svešvalodu:</h4><br>";
-            let tresaValoda = document.createElement("input");
-            tresaValoda.type = "radio";
-            tresaValoda.name = "tresaval";
-            tresaValoda.required = true;
-            tresaValoda.value = "71";
-            tresaValoda.id = "tresaFrancu";
-            divtresaval.appendChild(tresaValoda);
-            let labelFrancu3 = document.createElement("label");
-            labelFrancu3.setAttribute("for","tresaFrancu");
-            labelFrancu3.innerHTML="Franču valoda";
-            divtresaval.appendChild(labelFrancu3);
-            let tresaValodaV = document.createElement("input");
-            tresaValodaV.type = "radio";
-            tresaValodaV.name = "tresaval";
-            tresaValodaV.value = "72";
-            tresaValodaV.id = "tresaVacu";
-            divtresaval.appendChild(tresaValodaV);
-            let labelVacu3 = document.createElement("label");
-            labelVacu3.setAttribute("for","tresaVacu");
-            labelVacu3.innerHTML="Vācu valoda";
-            divtresaval.appendChild(labelVacu3);
-        } else{
-            let tresaValoda = document.createElement("input");
-            tresaValoda.type="hidden";
-            tresaValoda.name="tresaval";
-            tresaValoda.value = "72"; 
-            divtresaval.appendChild(tresaValoda);
-        }
         forma.appendChild(divtresaval);
         let pogaGatavs = document.createElement("input");
         pogaGatavs.type = "submit";
@@ -98,17 +67,6 @@ class Tests4{
         papilduInfo.id="masivs";
         papilduInfo.name="izvele[]";
         let rezultats=[];
-        for (let i=13; i<42; i++){
-            if(i==34||i==37||i==40||i==41){
-                rezultats.push(i*100+document.getElementById("izvele"+i).selectedIndex+9)
-            }
-            if(document.getElementById("izvele"+i)&&document.getElementById("izvele"+i).selectedIndex==1){
-                rezultats.push(i);
-            }
-            else if (document.getElementById("izvele"+i)&&document.getElementById("izvele"+i).selectedIndex==2){
-                rezultats.push(0-i);
-            };
-        };
         papilduInfo.value=rezultats;
         let izveleir = document.createElement("input");
         izveleir.type="hidden";
@@ -123,7 +81,6 @@ class Tests4{
         stunduskaiti.type="hidden";
         stunduskaiti.id="dazadiskaiti";
         stunduskaiti.name="stunduskaits[]";
-        stunduskaiti.value=[this.stundas10,this.stundas11,this.stundas12];
         forma.appendChild(stunduskaiti);
         divForma.appendChild(forma);
         document.body.appendChild(divForma);
