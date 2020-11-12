@@ -26,7 +26,7 @@ class Tests4{
         AnotacijasVieta.rows = "10";
         AnotacijasVieta.cols = "50";
         AnotacijasVieta.placeholder = "Anotācija";
-        forma.appendChild(vardaVieta);
+        forma.appendChild(AnotacijasVieta);
         forma.innerHTML+="<br><h4> Izvēlieties tipu:</h4><br>";
         let otraValoda = document.createElement("input");
         otraValoda.type = "radio";
