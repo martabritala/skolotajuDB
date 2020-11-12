@@ -47,3 +47,8 @@ def suutiit():
     data.ierakstit(parametri)
     return data.test_connection()
 
+@app.route('/mekletajs')
+def test():
+    return render_template('rezultati.html')
+
+
