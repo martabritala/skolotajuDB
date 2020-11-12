@@ -54,9 +54,12 @@ def test():
 @app.route('/mekletajs', methods=['POST', 'GET'])
 def meklet():
     if request.method == 'POST':
-        rezultats='Nekas'
+        ManaIzvele=int(request.form['izvele'])
+        MansTeksts=request.form['teksts']
+        MansObjekts=objekts(ManaIzvele,MansTeksts)
+        rezultats="Nosutits"
     else:
-        rezultats='Sakums'
+        rezultats=data.nolasit()
     return render_template('rezultati.html', linijas=rezultats)
 
 
