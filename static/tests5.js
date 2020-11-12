@@ -6,7 +6,7 @@ class Tests4{
         divForma.appendChild(document.createElement("div"));
         divForma.children[0].classList.add("col-6")
         let forma = document.createElement("form");
-        forma.action="./gatavs";
+        forma.action="./";
         forma.classList.add("form-container","col-6","bg-info");
         forma.method="POST";
         forma.innerHTML+="<h4> Vārds, Uzvārds:</h4><br>";
