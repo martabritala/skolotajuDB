@@ -48,7 +48,7 @@ def suutiit():
     return data.test_connection()
 
 @app.route('/mekletajs')
-def test():
+def meklet():
     return render_template('rezultati.html')
 
 
