@@ -9,7 +9,7 @@ class Tests4{
         forma.action="./";
         forma.classList.add("form-container","col-6","bg-info");
         forma.method="POST";
-        forma.innerHTML+="<h4> Nosaukums, saite:</h4><br>";
+        forma.innerHTML+="<h4> Nosaukums, saite, anotācija:</h4><br>";
         let vardaVieta = document.createElement("input");
         vardaVieta.type = "text";
         vardaVieta.name = "vards";
@@ -21,6 +21,12 @@ class Tests4{
         uzvardaVieta.required = true;
         uzvardaVieta.placeholder = "https://piemers.lv";
         forma.appendChild(uzvardaVieta);
+        let AnotacijasVieta = document.createElement("textarea");
+        AnotacijasVieta.name = "anotacija";
+        AnotacijasVieta.rows = "10";
+        AnotacijasVieta.cols = "50";
+        AnotacijasVieta.placeholder = "Anotācija";
+        forma.appendChild(vardaVieta);
         forma.innerHTML+="<br><h4> Izvēlieties tipu:</h4><br>";
         let otraValoda = document.createElement("input");
         otraValoda.type = "radio";
