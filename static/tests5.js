@@ -72,7 +72,7 @@ class Tests4{
         izveleir.name = "programma";
         izveleir.value= this.izvelesNr;
         console.log(rezultats);
-        forma.appendChild(pogaNavGatavs);
+        // forma.appendChild(pogaNavGatavs);
         forma.appendChild(papilduInfo);
         forma.appendChild(izveleir);
         let stunduskaiti = document.createElement("input");
