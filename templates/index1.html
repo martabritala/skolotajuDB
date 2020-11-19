@@ -38,8 +38,8 @@
               {%set ns.num = rinda.kategorija%}
               </td><td>
             {%endif%}
-            <input type="checkbox" id="{{rinda.tag_id}}" name="kateg{{rinda.kategorija}}[]" value="{{rinda.tag_id}}">
-            <label for="{{rinda.tag_id}}">{{rinda.tag_name}}</label> <br>
+            <input type="checkbox" name="kateg{{rinda.kategorija}}[]" value="{{rinda.tag_id}}">
+            {{rinda.tag_name}} <br>
             {%endfor%}
           </td>
         </tr>
