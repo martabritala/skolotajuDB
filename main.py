@@ -57,7 +57,8 @@ def test():
 def meklet():
     if request.method == 'POST':
         Nosaukums = request.form['nosaukums']
-        
+        print(Nosaukums)
+        print(request.json)
         # ManaIzvele=int(request.form['izvele'])
         # MansTeksts=request.form['teksts']
         # MansObjekts=objekts(ManaIzvele,MansTeksts)
