@@ -16,6 +16,9 @@ app = Flask('app')
 @app.route('/', methods=['POST','GET'])
 def index_lapa():
     if request.method=='POST':
+        Nosaukums = request.form['nosaukums']
+        print(Nosaukums)
+        print(request.json)
         elementi=data.nolasit(2)
         kategorijas=data.nolasit(1)
     else:
@@ -56,9 +59,9 @@ def test():
 @app.route('/mekletajs', methods=['POST', 'GET'])
 def meklet():
     if request.method == 'POST':
-        Nosaukums = request.form['nosaukums']
-        print(Nosaukums)
-        print(request.json)
+        # Nosaukums = request.form['nosaukums']
+        # print(Nosaukums)
+        # print(request.json)
         # ManaIzvele=int(request.form['izvele'])
         # MansTeksts=request.form['teksts']
         # MansObjekts=objekts(ManaIzvele,MansTeksts)
