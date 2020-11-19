@@ -35,11 +35,22 @@ def test_connection():
     conn.close()
     return result
 
-def ierakstit(parametri):
+def ierakstit1(parametri):
     conn = psycopg2.connect(dsn)
     cur = conn.cursor()
-    sql="""INSERT INTO izvele (vards,uzvards,izvele_id,datori_id,specdebates,specanglit,specfiloz,specpub,specpapangv,specpsih,specrobo,speckrv,padz_id1,padz_id2,padz_id3,otra_valoda,tresa_valoda,eksamena_nr) 
-        VALUES ({}) RETURNING nrpk;""" 
+    sql="""INSERT INTO saites (url,nosaukums,atsauksme,autors) 
+        VALUES ({}) RETURNING id;""" 
+    cur.execute(sql.format(parametri))
+    conn.commit()
+    cur.close()
+    conn.close()
+    return test_connection()
+
+def ierakstit2(parametri):
+    conn = psycopg2.connect(dsn)
+    cur = conn.cursor()
+    sql="""INSERT INTO tagi_saites (tag_id,saite_id) 
+        VALUES ({}) RETURNING saraksta_id;""" 
     cur.execute(sql.format(parametri))
     conn.commit()
     cur.close()
