@@ -30,7 +30,9 @@
           {%endfor%}
         </tr>
         <tr>
-          {{teksts}}
+          <td>
+            {%for rinda in teksts%}
+            {{rinda[tag_name]}}
         </tr>
       </table>
     </form>
