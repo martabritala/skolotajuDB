@@ -21,7 +21,7 @@ def index_lapa():
     else:
         elementi=''
         kategorijas=data.nolasit(1)
-    return render_template('index.html',teksts=elementi, kategs=kategorijas)
+    return render_template('index1.html',teksts=elementi, kategs=kategorijas)
 
 # @app.route('/gatavs', methods=['POST', 'GET'])
 # def gatavs():

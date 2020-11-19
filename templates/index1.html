@@ -10,12 +10,25 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script type="text/javascript" src="{{url_for('static',filename='tests5.js')}}"></script>
     <script type="text/javascript" charset="UTF-8">
-        window.onload = () => {
-          const s = new Tests4("konteiners",); // "{{url_for('static',filename='info_logo.png')}}");
-        }
     </script>
   </head>
   <body class="bg-light">
     <a href="./mekletajs">Iet uz meklēšanas sadaļu</a>
+    <form method="POST">
+      <h3>Pievienot lapu:   </h3>
+      <input type="text" name="nosaukums" placeholder="Nosaukums" required>
+      <input type="url" name="saite" placeholder="https://piemers.lv" required>
+      <textarea name="anotacija" rows="10" cols="50" placeholder="Anotācija"></textarea>
+      <table>
+        {%for kategorija in kategs%}
+        {%for vards in kategorija%}
+        <th>
+            {{kategorija[vards]}}
+        </th>
+        {%endfor%}
+        {%endfor%}
+      </table>
+    </form>
+
   </body>
 </html>
