@@ -41,21 +41,23 @@ def ierakstit1(parametri):
     sql="""INSERT INTO saites (url,nosaukums,atsauksme,autors) 
         VALUES ({}) RETURNING id;""" 
     cur.execute(sql.format(parametri))
+    jaunais_id=cur.fetchone[0]
+    conn.commit()
+    cur.close()
+    conn.close()
+    return jaunais_id
+
+def ierakstit2(tags,saite):
+    conn = psycopg2.connect(dsn)
+    cur = conn.cursor()
+    sql="""INSERT INTO tagi_saites (tag_id,saite_id) 
+        VALUES (%s,%s) RETURNING saraksta_id;""" 
+    cur.execute(sql,(tags,saite))
     conn.commit()
     cur.close()
     conn.close()
     return test_connection()
 
-def ierakstit2(parametri):
-    conn = psycopg2.connect(dsn)
-    cur = conn.cursor()
-    sql="""INSERT INTO tagi_saites (tag_id,saite_id) 
-        VALUES ({}) RETURNING saraksta_id;""" 
-    cur.execute(sql.format(parametri))
-    conn.commit()
-    cur.close()
-    conn.close()
-    return test_connection()
 
 def nolasit(parametri = 0):
     conn = psycopg2.connect(dsn)
