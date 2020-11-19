@@ -18,7 +18,7 @@ def index_lapa():
     if request.method=='POST':
         Nosaukums = request.form['nosaukums']
         print(Nosaukums)
-        print(request.json)
+        print(request.form.getlist('kateg5[]'))
         elementi=data.nolasit(2)
         kategorijas=data.nolasit(1)
     else:
