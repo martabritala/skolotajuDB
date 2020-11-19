@@ -44,13 +44,13 @@
               <tr>
                 {%set ns.esosais = linija.id %}
                 <td>{{ns.rinda}}</td>
-                {%set ns.rinda += 1%}
+                {%set ns.rinda = ns.rinda + 1%}
                 <td>{{linija.nosaukums}}</td>
                 <td><a href="{{linija.url}}">{{linija.url}}</a></td>
                 <td>{{linija.atsauksme}}</td>
                 <td>{{linija.autors}}</td>
               {%else%}
-              
+
               {%endif%}
               {% endfor %}
               </tr>
