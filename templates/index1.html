@@ -31,11 +31,11 @@
         </tr>
         <tr>
           <td>
-            {%set num = 1%}
+            {%set ns = namespace(num=1) %}
             {%for rinda in teksts%}
-            {{num}}
+            {{ns.num}}
             {%if rinda.kategorija > num%}
-              {%set num = rinda.kategorija%}
+              {%set ns.num = rinda.kategorija%}
               </td><td>
             {%endif%}
             <input type="checkbox" id="{{rinda.tag_id}}" name="{{rinda.kategorija}}" value="{{rinda.tag_id}}">
