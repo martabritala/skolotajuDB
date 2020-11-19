@@ -32,7 +32,6 @@
                 <th>Autors</th>
                 {%set ns = namespace(esosais=0)%}
                 {%for kategorija in kategs%}
-                {{kategorija}}
                 {%for vards in kategorija%}
                 <th>
                     {{kategorija[vards]}}
@@ -43,6 +42,7 @@
               {%for linija in linijas %}
               <tr>
                 <td>{{loop.index}}</td>
+                {{linija}}
                 {% for vards in linija %}
                 <td>
                     {%if loop.index==2%}
