@@ -19,8 +19,9 @@ def index_lapa():
         Nosaukums = request.form['nosaukums']
         print(Nosaukums)
         saraksts = request.form.getlist('kateg[]')
-        for elements in saraksts
-        print(elements)
+        for elements in saraksts:
+            print(elements)
+            
         kverijaparametri1="'"+request.form['saite']+"'"','"'"+request.form['nosaukums']+"'"','"'"+request.form['anotacija']+"'"','"'"+request.form['Autors']+"'"
         print(kverijaparametri1)
         elementi=data.nolasit(2)
