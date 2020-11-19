@@ -33,12 +33,13 @@
           <td>
             {%for tabula in teksts%}
               {%for rinda in tabula%}
-                {{rinda[tag_name]}}
+                {{rinda}}
               {%endfor%}
             {%endfor%}
           </td>
         </tr>
       </table>
+      <input type="submit">
     </form>
 
   </body>
