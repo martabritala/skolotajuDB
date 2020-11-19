@@ -31,11 +31,14 @@
         </tr>
         <tr>
           <td>
-            {%for tabula in teksts%}
-              {{tabula.tag_name}}
-              <!-- {%for rinda in tabula%}
-                {{tabula[rinda]}}
-              {%endfor%} -->
+            {%set num = 1%}
+            {%for rinda in teksts%}
+            {%if rinda.kategorija > num%}
+              {%set num = num + 1}
+              </td><td>
+            {%endif%}
+            <input type="checkbox" id="{{rinda.tag_id}}" name="{{rinda.kategorija}" value="{{rinda.tag_id}}">
+            <label for="{{rinda.tag_id}}">{{rinda.tag_name}}</label>
             {%endfor%}
           </td>
         </tr>
