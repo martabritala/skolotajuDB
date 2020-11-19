@@ -32,9 +32,10 @@
         <tr>
           <td>
             {%for tabula in teksts%}
-              {%for rinda in tabula%}
+              {{tabula.tag_name}}
+              <!-- {%for rinda in tabula%}
                 {{tabula[rinda]}}
-              {%endfor%}
+              {%endfor%} -->
             {%endfor%}
           </td>
         </tr>
