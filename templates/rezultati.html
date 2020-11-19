@@ -44,6 +44,7 @@
               <tr>
                 {%set ns.esosais = linija.id %}
                 {%set ns.kategorija = linija.kategorija%}
+                {{ns.kategorija}}
                 <td>{{ns.rinda}}</td>
                 {%set ns.rinda = ns.rinda + 1%}
                 <td>{{linija.nosaukums}}</td>
@@ -51,6 +52,7 @@
                 <td>{{linija.atsauksme}}</td>
                 <td>{{linija.autors}}</td>
                 <td> {%for n in range(7)%}
+                  {{n}}
                   {%if n+1 != linija.kategorija%}
                     </td><td>
                   {%else%}
