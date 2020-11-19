@@ -41,7 +41,7 @@ def ierakstit1(parametri):
     sql="""INSERT INTO saites (url,nosaukums,atsauksme,autors) 
         VALUES ({}) RETURNING id;""" 
     cur.execute(sql.format(parametri))
-    jaunais_id=cur.fetchone[0]
+    jaunais_id=cur.fetchone()[0]
     conn.commit()
     cur.close()
     conn.close()
