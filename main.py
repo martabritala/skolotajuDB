@@ -16,10 +16,10 @@ app = Flask('app')
 @app.route('/', methods=['POST','GET'])
 def index_lapa():
     if request.method=='POST':
-        elementi='Nosutijas'
+        elementi=data.nolasit(2)
         kategorijas=data.nolasit(1)
     else:
-        elementi=''
+        elementi=data.nolasit(2)
         kategorijas=data.nolasit(1)
     return render_template('index1.html',teksts=elementi, kategs=kategorijas)
 
