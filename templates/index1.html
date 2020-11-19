@@ -34,7 +34,7 @@
             {%set ns = namespace(num=1) %}
             {%for rinda in teksts%}
             {{ns.num}}
-            {%if rinda.kategorija > num%}
+            {%if rinda.kategorija > ns.num%}
               {%set ns.num = rinda.kategorija%}
               </td><td>
             {%endif%}
