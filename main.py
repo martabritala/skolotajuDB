@@ -7,6 +7,7 @@ import data
 # from boto.s3.connection import S3Connection
 
 app = Flask('app')
+app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 
 # class objekts:
 #     def __init__(self, izvele, teksts):
