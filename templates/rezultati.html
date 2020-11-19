@@ -51,11 +51,19 @@
                 <td>{{linija.atsauksme}}</td>
                 <td>{{linija.autors}}</td>
                 <td> {%for n in range(7)%}
-                  {{n}}
+                  {%if n+1 != linija.kategorija%}
+                    </td><td>
+                  {%else%}
+                      {{linija.tag_name}}
+                      {%break%}
+                  {%endif%}
                   {%endfor%}
-                <!-- {{linija.tag_name}} -->
               {%else%}
                 {%if ns.kategorija==linija.kategorija%}
+                  <br>
+                  {{linija.kategorija}}
+                {%else%}
+                  </td><td>
                 {%endif%}
               {%endif%}
               {% endfor %}
