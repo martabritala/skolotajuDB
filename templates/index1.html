@@ -34,7 +34,7 @@
             {%set num = 1%}
             {%for rinda in teksts%}
             {%if rinda.kategorija > num%}
-              {%set num = num + 1}
+              {%set num = num + 1%}
               </td><td>
             {%endif%}
             <input type="checkbox" id="{{rinda.tag_id}}" name="{{rinda.kategorija}" value="{{rinda.tag_id}}">
