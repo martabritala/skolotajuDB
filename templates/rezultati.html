@@ -26,11 +26,11 @@
             <table class="table-sm table-bordered table-striped">
               <tr class="sticky-top">
                 <th>Nr.p.k.</th>
-                <th>saite</th>
                 <th>Nosaukums</th>
+                <th>Saite</th>
                 <th>Anotācija</th>
                 <th>Autors</th>
-                {%set ns = namespace(esosais=0)%}
+                {%set ns = namespace(esosais=0,rinda=1)%}
                 {%for kategorija in kategs%}
                 {%for vards in kategorija%}
                 <th>
@@ -38,28 +38,22 @@
                 </th>
                 {%endfor%}
                 {%endfor%}
-              </tr>
               {%for linija in linijas %}
-              <tr>
-                <td>{{loop.index}}</td>
-                {{linija}}
-                {% for vards in linija %}
-                <td>
-                    {%if loop.index==2%}
-                        <a href='{{linija[vards]}}' target="_blank">
-                    {%endif%}
-                  {% if linija[vards] == None %}
-                    Nav ierakstīts
-                  {% else %}
-                    {{linija[vards]}}
-                  {% endif %}
-                  {%if loop.index==2%}
-                        </a>
-              {%endif%}
-          </td>
-                {% endfor %}
+              {%if ns.esosais != linija.id %}
               </tr>
+              <tr>
+                {%set ns.esosais = linija.id %}
+                <td>{{ns.rinda}}</td>
+                {%set ns.rinda += 1%}
+                <td>{{linija.nosaukums}}</td>
+                <td><a href="{{linija.url}}">{{linija.url}}</a></td>
+                <td>{{linija.atsauksme}}</td>
+                <td>{{linija.autors}}</td>
+              {%else%}
+              
+              {%endif%}
               {% endfor %}
+              </tr>
             </table>
           </div>  
     
