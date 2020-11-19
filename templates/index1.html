@@ -31,8 +31,10 @@
         </tr>
         <tr>
           <td>
-            {%for rinda in teksts%}
-            {{rinda}}
+            {%for tabula in teksts%}
+              {%for rinda in tabula%}
+                {{rinda[tag_name]}}
+              {%endfor%}
             {%endfor%}
           </td>
         </tr>
