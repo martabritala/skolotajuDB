@@ -18,7 +18,8 @@ def index_lapa():
     if request.method=='POST':
         Nosaukums = request.form['nosaukums']
         print(Nosaukums)
-        for elements in request.form.getlist('kateg[]')
+        saraksts[] = request.form.getlist('kateg[]')
+        for elements in saraksts
         print(elements)
         kverijaparametri1="'"+request.form['saite']+"'"','"'"+request.form['nosaukums']+"'"','"'"+request.form['anotacija']+"'"','"'"+request.form['Autors']+"'"
         print(kverijaparametri1)
