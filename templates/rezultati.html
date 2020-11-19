@@ -38,13 +38,12 @@
                 </th>
                 {%endfor%}
                 {%endfor%}
-              {%for linija in linijas %}
-              {%if ns.esosais != linija.id %}
+        {%for linija in linijas %}
+        {%if ns.esosais != linija.id %}
               </tr>
               <tr>
                 {%set ns.esosais = linija.id %}
                 {%set ns.kategorija = linija.kategorija%}
-                {{ns.kategorija}}
                 <td>{{ns.rinda}}</td>
                 {%set ns.rinda = ns.rinda + 1%}
                 <td>{{linija.nosaukums}}</td>
@@ -52,7 +51,6 @@
                 <td>{{linija.atsauksme}}</td>
                 <td>{{linija.autors}}</td>
                 <td> {%for n in range(7)%}
-                  {{n}}
                   {%if n+1 != linija.kategorija%}
                     </td><td>
                   {%else%}
@@ -60,12 +58,20 @@
                       {%break%}
                   {%endif%}
                   {%endfor%}
-              {%else%}
+        {%else%}
                 {%if ns.kategorija==linija.kategorija%}
                   <br>
                   {{linija.kategorija}}
                 {%else%}
                   </td><td>
+                    {%for n in range(linija.kategorija,ns.kategorija)%}
+                    {%if n+1 != linija.kategorija%}
+                  </td><td>
+                {%else%}
+                    {{linija.tag_name}}
+                    {%break%}
+                {%endif%}
+                  {%endfor%}
                 {%endif%}
               {%endif%}
               {% endfor %}
