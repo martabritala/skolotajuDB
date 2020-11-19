@@ -20,13 +20,18 @@
       <input type="url" name="saite" placeholder="https://piemers.lv" required>
       <textarea name="anotacija" rows="10" cols="50" placeholder="Anotācija"></textarea>
       <table class="table-sm table-bordered">
-        {%for kategorija in kategs%}
-        {%for vards in kategorija%}
-        <th>
-            {{kategorija[vards]}}
-        </th>
-        {%endfor%}
-        {%endfor%}
+        <tr>
+          {%for kategorija in kategs%}
+          {%for vards in kategorija%}
+          <th>
+              {{kategorija[vards]}}
+          </th>
+          {%endfor%}
+          {%endfor%}
+        </tr>
+        <tr>
+          
+        </tr>
       </table>
     </form>
 
