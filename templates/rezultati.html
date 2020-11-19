@@ -64,16 +64,17 @@
                   {{linija.kategorija}}
                 {%else%}
                   </td><td>
-                    {%for n in range(linija.kategorija,ns.kategorija)%}
+                    {%for n in range(ns.kategorija,linija.kategorija)%}
                     {%if n+1 != linija.kategorija%}
                   </td><td>
-                {%else%}
-                    {{linija.tag_name}}
-                    {%break%}
+                    {%else%}
+                      {%set ns.kategorija = linija.kategorija %}
+                      {{linija.tag_name}}
+                      {%break%}
+                    {%endif%}
+                    {%endfor%}
                 {%endif%}
-                  {%endfor%}
-                {%endif%}
-              {%endif%}
+        {%endif%}
               {% endfor %}
               </td>
               </tr>
