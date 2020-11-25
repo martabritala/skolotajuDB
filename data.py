@@ -89,7 +89,7 @@ def tekstapstrade(teksts, ietvars, saraksts):
     if len(saraksts) == 0:
         jaunaiskverijsvidus = ""
     else:
-        jaunaiskverijsvidus = """EXISTS (SELECT 1 FROM tagi_saites WHERE (tagi_saites.tag_id = {} AND tagi_saites.saite_id=id)
+        jaunaiskverijsvidus = """WHERE EXISTS (SELECT 1 FROM tagi_saites WHERE (tagi_saites.tag_id = {} AND tagi_saites.saite_id=id)
             """.format(saraksts[0])
         for tags in saraksts[1:]:
             jaunaiskverijsvidus +="""
@@ -104,9 +104,9 @@ def tekstapstrade(teksts, ietvars, saraksts):
             jaunaiskverijssakums = """
             SELECT id, url, nosaukums, atsauksme, autors, tag_name, tagi.tag_id, kategorija 
             FROM 
-                (SELECT * FROM saites WHERE """
+                (SELECT * FROM saites """
             jaunaiskverijsbeigas = """
-                ) a 
+                ) AS a 
                 LEFT JOIN tagi_saites ON a.id=tagi_saites.saite_id LEFT JOIN tagi ON tagi_saites.tag_id = tagi.tag_id
             ORDER BY id ASC, kategorija ASC, tagi.tag_id ASC
             """
@@ -118,9 +118,9 @@ def tekstapstrade(teksts, ietvars, saraksts):
         SELECT * FROM (
             SELECT id, url, nosaukums, atsauksme, autors, tag_name, tagi.tag_id, kategorija 
             FROM 
-                (SELECT * FROM saites WHERE """
+                (SELECT * FROM saites """
         jaunaiskverijsbeigas = """
-                ) a 
+                ) AS a
                 LEFT JOIN tagi_saites ON a.id=tagi_saites.saite_id LEFT JOIN tagi ON tagi_saites.tag_id = tagi.tag_id
             ORDER BY id ASC, kategorija ASC, tagi.tag_id ASC) AS tabula WHERE
             """
