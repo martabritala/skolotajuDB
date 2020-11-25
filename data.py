@@ -106,7 +106,7 @@ def tekstapstrade(teksts, ietvars, saraksts):
                     )
                 ) a 
                 LEFT JOIN tagi_saites ON a.id=tagi_saites.saite_id LEFT JOIN tagi ON tagi_saites.tag_id = tagi.tag_id
-            ORDER BY id ASC
+            ORDER BY id ASC, kategorija ASC, tagi.tag_id ASC
             """
 
             jaunaiskverijs = jaunaiskverijssakums + jaunaiskverijsvidus + jaunaiskverijsbeigas
