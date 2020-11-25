@@ -114,10 +114,22 @@ def tekstapstrade(teksts, ietvars, saraksts):
             jaunaiskverijs = jaunaiskverijssakums + jaunaiskverijsvidus + jaunaiskverijsbeigas
             print(jaunaiskverijs)
     else:
+        jaunaiskverijssakums = """
+        SELECT * FROM (
+            SELECT id, url, nosaukums, atsauksme, autors, tag_name, tagi.tag_id, kategorija 
+            FROM 
+                (SELECT * FROM saites WHERE """
+        jaunaiskverijsbeigas = """
+                    )
+                ) a 
+                LEFT JOIN tagi_saites ON a.id=tagi_saites.saite_id LEFT JOIN tagi ON tagi_saites.tag_id = tagi.tag_id
+            ORDER BY id ASC, kategorija ASC, tagi.tag_id ASC) AS tabula WHERE
+            """
         if ietvars == 1:
-            jaunaiskverijs = 0
+            jaunaiskverijsbeigas += """tabula.nosaukums LIKE '%{}%' """.format(teksts)
         elif ietvars == 2:
-            jaunaiskverijs = 0
+            jaunaiskverijsbeigas += """tabula.atsauksme LIKE '%{}%' """.format(teksts)
         else:
-            jaunaiskverijs = 0
+            jaunaiskverijsbeigas += """tabula.autors LIKE '%{}%' """.format(teksts)
+        jaunaiskverijs = jaunaiskverijssakums + jaunaiskverijsvidus + jaunaiskverijsbeigas
     return jaunaiskverijs
