@@ -23,6 +23,31 @@
                 <input type="radio" name="radiovariants" value="3">
                 <label for="3">Pievienotāja vārds</label>
                 <br>
+                <h3>Izvēlies atslēgvērdus meklēšanai:</h3>
+                <table class="table-sm table-bordered">
+                  <tr>
+                    {%for kategorija in kategs%}
+                    {%for vards in kategorija%}
+                    <th>
+                        {{kategorija[vards]}}
+                    </th>
+                    {%endfor%}
+                    {%endfor%}
+                  </tr>
+                  <tr>
+                    <td>
+                      {%set ns = namespace(num=1) %}
+                      {%for rinda in teksts%}
+                      {%if rinda.kategorija > ns.num%}
+                        {%set ns.num = rinda.kategorija%}
+                        </td><td>
+                      {%endif%}
+                      <input type="checkbox" name="kategors[]" value="{{rinda.tag_id}}">
+                      {{rinda.tag_name}} <br>
+                      {%endfor%}
+                    </td>
+                  </tr>
+                </table>          
                 <input type="submit" value="Meklēt">
             </form>
         </div>

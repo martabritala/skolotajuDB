@@ -82,3 +82,7 @@ def nolasit(parametri = 0):
         r = [dict((cur.description[i][0], value) \
                for i, value in enumerate(row)) for row in cur.fetchall()]
     return r
+
+
+def tekstapstrade(teksts, ietvars, saraksts):
+    return teksts
