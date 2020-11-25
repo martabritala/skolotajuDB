@@ -68,7 +68,8 @@ def meklet():
     if request.method == 'POST':
         Nosaukums = request.form['teksts']
         print(Nosaukums)
-        rezultats=data.nolasit()
+        kverijs=0
+        rezultats=data.nolasit(kverijs)
         kategorijas=data.nolasit(1)
     else:
         rezultats=data.nolasit()
