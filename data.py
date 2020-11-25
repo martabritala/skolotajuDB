@@ -90,6 +90,7 @@ def tekstapstrade(teksts, ietvars, saraksts):
         if len(saraksts) == 0:
             jaunaiskverijs = 0
         else:
+            jaunaiskverijsbeigas = ""
             jaunaiskverijssakums = """
             SELECT id, url, nosaukums, atsauksme, autors, tag_name, tagi.tag_id, kategorija 
             FROM 
