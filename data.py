@@ -86,5 +86,7 @@ def nolasit(parametri = 0):
 
 def tekstapstrade(teksts, ietvars, saraksts):
     print(teksts,ietvars,saraksts)
+    if teksts == "":
+        print("Nav teksta")
     jaunaiskverijs = teksts
     return jaunaiskverijs
