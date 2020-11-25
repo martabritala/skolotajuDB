@@ -15,9 +15,15 @@
             <!--Meklēšanas vieta-->
             <form method="POST">
                 <h3>Meklētājs:   </h3>
-                <input type="text" name="teksts">
+                <input type="text" name="teksts" placeholder="Teksta daļa, ko meklēt">
+                <input type="radio" name="radiovariants" value="1" checked>
+                <label for="1">Nosaukums</label>
+                <input type="radio" name="radiovariants" value="2">
+                <label for="2">Anotācija</label>
+                <input type="radio" name="radiovariants" value="3">
+                <label for="3">Pievienotāja vārds</label>
                 <br>
-                <input type="submit" value="Meklēt vai sakārtot">
+                <input type="submit" value="Meklēt">
             </form>
         </div>
         <p>
@@ -29,7 +35,7 @@
                 <th>Nosaukums</th>
                 <th>Saite</th>
                 <th>Anotācija</th>
-                <th>Autors</th>
+                <th>Pievienoja</th>
                 {%set ns = namespace(esosais=0,rinda=1,kategorija=0)%}
                 {%for kategorija in kategs%}
                 {%for vards in kategorija%}
