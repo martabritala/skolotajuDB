@@ -124,9 +124,9 @@ def tekstapstrade(teksts, ietvars, saraksts):
                 LEFT JOIN tagi_saites ON a.id=tagi_saites.saite_id LEFT JOIN tagi ON tagi_saites.tag_id = tagi.tag_id
             ORDER BY id ASC, kategorija ASC, tagi.tag_id ASC) AS tabula WHERE
             """
-        if ietvars == 1:
+        if ietvars == '1':
             jaunaiskverijsbeigas += """tabula.nosaukums LIKE '%{}%' """.format(teksts)
-        elif ietvars == 2:
+        elif ietvars == '2':
             jaunaiskverijsbeigas += """tabula.atsauksme LIKE '%{}%' """.format(teksts)
         else:
             jaunaiskverijsbeigas += """tabula.autors LIKE '%{}%' """.format(teksts)
