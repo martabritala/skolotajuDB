@@ -85,4 +85,6 @@ def nolasit(parametri = 0):
 
 
 def tekstapstrade(teksts, ietvars, saraksts):
-    return teksts
+    print(teksts,ietvars,saraksts)
+    jaunaiskverijs = teksts
+    return jaunaiskverijs
