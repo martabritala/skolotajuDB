@@ -70,8 +70,6 @@ def meklet():
         teksta_ietvars = request.form['radiovariants']
         tagi = request.form.getlist('kategors[]')
         kverijs= data.tekstapstrade(Teksta_dala,teksta_ietvars,tagi)
-        print(kverijs)
-        kverijs=0
         rezultats=data.nolasit(kverijs)
         kategorijas=data.nolasit(1)
         elementi=data.nolasit(2)
