@@ -87,6 +87,29 @@ def nolasit(parametri = 0):
 def tekstapstrade(teksts, ietvars, saraksts):
     print(teksts,ietvars,saraksts)
     if teksts == "":
-        print("Nav teksta")
-    jaunaiskverijs = teksts
+        if len(saraksts) == 0:
+            jaunaiskverijs = 0
+        else:
+            jaunaiskverijssakums = """
+            SELECT id, url, nosaukums, atsauksme, autors, tag_name, tagi.tag_id, kategorija 
+            FROM 
+                (SELECT * FROM saites WHERE 
+                    EXISTS (SELECT 1 FROM tagi_saites WHERE (tagi_saites.tag_id = {} AND tagi_saites.saite_id=id)
+            """.format(saraksts[0])
+            for tags in saraksts[1:]:
+                jaunaiskverijsvidus +="""
+                            AND EXISTS (SELECT 1 FROM tagi_saites WHERE tagi_saites.tag_id = {} AND tagi_saites.saite_id=id)
+                """.format(tags)
+                print(jaunaiskverijsvidus)
+            jaunaiskverijsbeigas = """
+                    )
+                ) a 
+                LEFT JOIN tagi_saites ON a.id=tagi_saites.saite_id LEFT JOIN tagi ON tagi_saites.tag_id = tagi.tag_id
+            ORDER BY id ASC
+            """
+
+            jaunaiskverijs = jaunaiskverijssakums + jaunaiskverijsvidus + jaunaiskverijsbeigas
+            print(jaunaiskverijs)
+    else:
+        jaunaiskverijs = teksts
     return jaunaiskverijs
