@@ -95,6 +95,7 @@ def tekstapstrade(teksts, ietvars, saraksts):
             jaunaiskverijsvidus +="""
                 AND EXISTS (SELECT 1 FROM tagi_saites WHERE tagi_saites.tag_id = {} AND tagi_saites.saite_id=id)
                 """.format(tags)
+        jaunaiskverijsvidus += " ) "
 
     if teksts == "":
         if len(saraksts) == 0:
@@ -105,7 +106,6 @@ def tekstapstrade(teksts, ietvars, saraksts):
             FROM 
                 (SELECT * FROM saites WHERE """
             jaunaiskverijsbeigas = """
-                    )
                 ) a 
                 LEFT JOIN tagi_saites ON a.id=tagi_saites.saite_id LEFT JOIN tagi ON tagi_saites.tag_id = tagi.tag_id
             ORDER BY id ASC, kategorija ASC, tagi.tag_id ASC
@@ -120,7 +120,6 @@ def tekstapstrade(teksts, ietvars, saraksts):
             FROM 
                 (SELECT * FROM saites WHERE """
         jaunaiskverijsbeigas = """
-                    )
                 ) a 
                 LEFT JOIN tagi_saites ON a.id=tagi_saites.saite_id LEFT JOIN tagi ON tagi_saites.tag_id = tagi.tag_id
             ORDER BY id ASC, kategorija ASC, tagi.tag_id ASC) AS tabula WHERE
