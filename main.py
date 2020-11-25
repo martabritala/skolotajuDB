@@ -66,12 +66,6 @@ def test():
 @app.route('/mekletajs', methods=['POST', 'GET'])
 def meklet():
     if request.method == 'POST':
-        # Nosaukums = request.form['nosaukums']
-        # print(Nosaukums)
-        # print(request.json)
-        # ManaIzvele=int(request.form['izvele'])
-        # MansTeksts=request.form['teksts']
-        # MansObjekts=objekts(ManaIzvele,MansTeksts)
         rezultats=data.nolasit()
         kategorijas=data.nolasit(1)
     else:
