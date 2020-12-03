@@ -15,11 +15,25 @@
   <body class="bg-light">
     <a href="./mekletajs">Iet uz meklēšanas sadaļu</a>
     <form method="POST">
+      <div class="row">
       <h3>Pievienot lapu:   </h3>
-      <input type="text" name="nosaukums" placeholder="Nosaukums" required>
-      <input type="url" name="saite" placeholder="https://piemers.lv" required>
-      <textarea name="anotacija" rows="10" cols="50" placeholder="Anotācija"></textarea>
-      <input type="text" name="Autors" placeholder="Pievienotāja Vārds, Uzvārds" required>
+      </div>
+      <div class="col">
+        <div class="row">
+          <input type="text" name="nosaukums" placeholder="Nosaukums" required>
+        </div>
+        <div class="row">
+          <input type="url" name="saite" placeholder="https://piemers.lv" required>
+        </div>
+        <div class="row">
+            <input type="text" name="Autors" placeholder="Pievienotāja Vārds, Uzvārds" required>
+        </div>
+      </div>
+      <div class="col">
+        <textarea name="anotacija" rows="10" cols="50" placeholder="Anotācija"></textarea>
+      </div>
+      <div id="infovieta" class="col">
+      </div>
       <table class="table-sm table-bordered">
         <tr>
           {%for kategorija in kategs%}
