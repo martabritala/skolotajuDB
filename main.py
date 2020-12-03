@@ -66,13 +66,23 @@ def test():
 @app.route('/mekletajs', methods=['POST', 'GET'])
 def meklet():
     if request.method == 'POST':
-        Teksta_dala = request.form['teksts']
-        teksta_ietvars = request.form['radiovariants']
-        tagi = request.form.getlist('kategors[]')
-        kverijs= data.tekstapstrade(Teksta_dala,teksta_ietvars,tagi)
-        rezultats=data.nolasit(kverijs)
-        kategorijas=data.nolasit(1)
-        elementi=data.nolasit(2)
+        if 'meklet' in request.form:
+            Teksta_dala = request.form['teksts']
+            teksta_ietvars = request.form['radiovariants']
+            tagi = request.form.getlist('kategors[]')
+            kverijs= data.tekstapstrade(Teksta_dala,teksta_ietvars,tagi)
+            rezultats=data.nolasit(kverijs)
+            kategorijas=data.nolasit(1)
+            elementi=data.nolasit(2)
+        elif 'dzest' in request.form:
+            print('dzest!!!')
+            Teksta_dala = request.form['teksts']
+            teksta_ietvars = request.form['radiovariants']
+            tagi = request.form.getlist('kategors[]')
+            kverijs= data.tekstapstrade(Teksta_dala,teksta_ietvars,tagi)
+            rezultats=data.nolasit(kverijs)
+            kategorijas=data.nolasit(1)
+            elementi=data.nolasit(2)
     else:
         rezultats=data.nolasit()
         kategorijas=data.nolasit(1)

@@ -48,7 +48,7 @@
                     </td>
                   </tr>
                 </table>          
-                <input type="submit" value="Meklēt">
+                <input type="submit" name="meklet" value="Meklēt">
             </form>
         </div>
         <p>
@@ -71,6 +71,7 @@
                 {%endfor%}
         {%for linija in linijas %}
         {%if ns.esosais != linija.id %}
+                <td><button type="submit" name="dzest" value="linija.id">Dzēst</button></td>
               </tr>
               <tr>
                 {%set ns.esosais = linija.id %}
@@ -108,6 +109,7 @@
         {%endif%}
               {% endfor %}
               </td>
+              <td><button>Dzēst</button></td>
               </tr>
             </table>
           </div>  
