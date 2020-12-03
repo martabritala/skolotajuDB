@@ -137,8 +137,8 @@ def tekstapstrade(teksts, ietvars, saraksts):
 def dzest(id):
     conn = psycopg2.connect(dsn)
     cur = conn.cursor()
-    kverijs = """DELETE FROM saites WHERE id = {};
-                DELETE FROM tagi_saites WHERE saite_id = {}""".format(id, id)
+    kverijs = """DELETE FROM tagi_saites WHERE saite_id = {};
+                    DELETE FROM saites WHERE id = {};""".format(id, id)
     cur.execute(kverijs)
     conn.commit()
     cur.close()
