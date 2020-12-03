@@ -29,7 +29,7 @@
                     {%for kategorija in kategs%}
                     {%for vards in kategorija%}
                     <th>
-                        {{kategorija[vards]}}<img id="{{loop.index}}" src="{{url_for('static', filename = 'info_logo.png')}}" height="1.5em" style="cursor: pointer;">
+                        {{kategorija[vards]}}<img id="{{loop.index}}" src="{{url_for('static', filename = 'info_logo.png')}}" style="cursor: pointer;">
                     </th>
                     {%endfor%}
                     {%endfor%}
