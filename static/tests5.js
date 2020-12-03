@@ -1,6 +1,6 @@
 function ieladejotPievienot(){
     for (let objekts in document.getElementsByTagName("img")){
-        objekts.onclick() = (evt) => {
+        objekts.onclick = (evt) => {
             inforadit(objekts.id);
         }
     }
