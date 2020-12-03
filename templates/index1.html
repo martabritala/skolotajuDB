@@ -22,12 +22,15 @@
       <div class="row">
       <div class="col col-2">
         <div class="row">
+          <p>Nosaukums:</p>
           <input type="text" name="nosaukums" placeholder="Nosaukums" required>
         </div>
         <div class="row">
+          <p>Saite:</p>
           <input type="url" name="saite" placeholder="https://piemers.lv" required>
         </div>
         <div class="row">
+          <p>Pievienotājs:</p>
             <input type="text" name="Autors" placeholder="Pievienotāja Vārds, Uzvārds" required>
         </div>
       </div>
@@ -37,6 +40,7 @@
       <div id="infovieta" class="col">
       </div>
       </div>
+    </div>
       <table class="table-sm table-bordered">
         <tr>
           {%for kategorija in kategs%}
@@ -59,6 +63,7 @@
           </td>
         </tr>
       </table>
+    <div class="container">
       <input type="submit" class="button btn-submit" onclick="return confirm('Vai pievienot?')" >
     </form>
     </div>
