@@ -76,11 +76,7 @@ def meklet():
             elementi=data.nolasit(2)
         elif 'dzest' in request.form:
             print('dzest!!!',request.form['dzestko'])
-            Teksta_dala = request.form['teksts']
-            teksta_ietvars = request.form['radiovariants']
-            tagi = request.form.getlist('kategors[]')
-            kverijs= data.tekstapstrade(Teksta_dala,teksta_ietvars,tagi)
-            rezultats=data.nolasit(kverijs)
+            rezultats=data.nolasit()
             kategorijas=data.nolasit(1)
             elementi=data.nolasit(2)
     else:
