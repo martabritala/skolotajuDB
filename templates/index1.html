@@ -12,7 +12,7 @@
     <script type="text/javascript" charset="UTF-8">
     </script>
   </head>
-  <body class="bg-light">
+  <body class="bg-light" onload="ieladejotpievienot()">
     <div class="container">
     <a href="./mekletajs">Iet uz meklēšanas sadaļu</a>
     <form method="POST">
@@ -45,7 +45,7 @@
         <tr>
           {%for kategorija in kategs%}
           <th>
-              {{kategorija.name}}<img id="{{loop.index}}" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Info par kategoriju" src="{{url_for('static', filename = 'info_logo.png')}}" style="cursor: pointer;">
+              {{kategorija.name}}<img id="{{loop.index}}" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Info par kategoriju" src="{{url_for('static', filename = 'info_logo.png')}}" style="cursor: pointer;" onclick="inforadit()">
           </th>
           {%endfor%}
         </tr>
