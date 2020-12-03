@@ -74,7 +74,7 @@
         {%if ns.esosais != linija.id %}
               </tr>
               <tr>
-                <td><form><input type="hidden" name="dzestko" value="{{linija.id}}"><input type="submit" name="dzest" value="Dzēst"></form> </td>
+                <td><form method="POST"><input type="hidden" name="dzestko" value="{{linija.id}}"><input type="submit" name="dzest" value="Dzēst"></form> </td>
                 {%set ns.esosais = linija.id %}
                 {%set ns.kategorija = linija.kategorija%}
                 <td>{{ns.rinda}}</td>
