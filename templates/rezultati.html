@@ -71,7 +71,6 @@
                 {%endfor%}
         {%for linija in linijas %}
         {%if ns.esosais != linija.id %}
-                <td><input type="submit" name="dzest" value="{{linija.id}}">Dzēst</input></td>
               </tr>
               <tr>
                 {%set ns.esosais = linija.id %}
@@ -107,9 +106,9 @@
                     {%endfor%}
                 {%endif%}
         {%endif%}
+        <td><input type="submit" name="dzest" value="{{linija.id}}">Dzēst</input></td>
               {% endfor %}
               </td>
-              <td><input type="submit" name="dzest" value="{{linija.id}}">Dzēst</input></td>
               </tr>
             </table>
           </div>  
