@@ -55,17 +55,17 @@
         </p>
         <div id="rezultati">
             <table class="table-sm table-bordered table-striped">
-              <tr class="sticky-top">
-                <th>Darbība</th>
-                <th>Nr.p.k.</th>
-                <th>Nosaukums</th>
-                <th>Saite</th>
-                <th>Anotācija</th>
-                <th>Pievienoja</th>
+              <tr class="row w-100 sticky-top">
+                <th class="col">Darbība</th>
+                <th class="col">Nr.p.k.</th>
+                <th class="col">Nosaukums</th>
+                <th class="col">Saite</th>
+                <th class="col">Anotācija</th>
+                <th class="col">Pievienoja</th>
                 {%set ns = namespace(esosais=0,rinda=1,kategorija=0)%}
                 {%for kategorija in kategs%}
                 {%for vards in kategorija%}
-                <th>
+                <th class="col">
                     {{kategorija[vards]}}
                 </th>
                 {%endfor%}
