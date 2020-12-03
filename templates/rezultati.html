@@ -56,16 +56,16 @@
         <div id="rezultati">
             <table class="table-sm table-bordered table-striped">
               <tr class="row w-100 sticky-top">
-                <th class="col">Darbība</th>
-                <th class="col">Nr.p.k.</th>
-                <th class="col">Nosaukums</th>
-                <th class="col">Saite</th>
-                <th class="col">Anotācija</th>
-                <th class="col">Pievienoja</th>
+                <th>Darbība</th>
+                <th>Nr.p.k.</th>
+                <th>Nosaukums</th>
+                <th>Saite</th>
+                <th>Anotācija</th>
+                <th>Pievienoja</th>
                 {%set ns = namespace(esosais=0,rinda=1,kategorija=0)%}
                 {%for kategorija in kategs%}
                 {%for vards in kategorija%}
-                <th class="col">
+                <th>
                     {{kategorija[vards]}}
                 </th>
                 {%endfor%}
@@ -73,7 +73,7 @@
         {%for linija in linijas %}
         {%if ns.esosais != linija.id %}
               </tr>
-              <tr>
+              <tr class="row w-100">
                 <td><form method="POST"><input type="hidden" name="dzestko" value="{{linija.id}}"><input type="submit" name="dzest" value="Dzēst" onclick="return confirm('Vai tiešām dzēst {{linija.nosaukums}}?')"></form> </td>
                 {%set ns.esosais = linija.id %}
                 {%set ns.kategorija = linija.kategorija%}
