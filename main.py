@@ -75,7 +75,7 @@ def meklet():
             kategorijas=data.nolasit(1)
             elementi=data.nolasit(2)
         elif 'dzest' in request.form:
-            print('dzest!!!',request.form['dzestko'])
+            data.dzest(request.form['dzestko'])
             rezultats=data.nolasit()
             kategorijas=data.nolasit(1)
             elementi=data.nolasit(2)

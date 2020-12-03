@@ -132,3 +132,17 @@ def tekstapstrade(teksts, ietvars, saraksts):
             jaunaiskverijsbeigas += """tabula.autors LIKE '%{}%' """.format(teksts)
         jaunaiskverijs = jaunaiskverijssakums + jaunaiskverijsvidus + jaunaiskverijsbeigas
     return jaunaiskverijs
+
+
+def dzest(id):
+    conn = psycopg2.connect(dsn)
+    cur = conn.cursor()
+    kverijs = """DELETE FROM saites WHERE id = {};
+                DELETE FROM tagi_saites WHERE saite_id = {}""".format(id, id)
+    cur.execute(kverijs)
+    conn.commit()
+    cur.close()
+    conn.close()
+    return kverijs
+
+    
