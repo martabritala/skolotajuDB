@@ -146,3 +146,13 @@ def dzest(id):
     return kverijs
 
     
+def saisuSaraksts():
+    conn = psycopg2.connect(dsn)
+    cur = conn.cursor()
+    kverijs = """SELECT url FROM saites"""
+    cur.execute(kverijs)
+    saraksts=cur.fetchall()
+    conn.commit()
+    cur.close()
+    conn.close()
+    return saraksts
