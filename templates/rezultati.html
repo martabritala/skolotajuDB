@@ -56,6 +56,7 @@
         <div id="rezultati">
             <table class="table-sm table-bordered table-striped">
               <tr class="sticky-top">
+                <th>Darbība</th>
                 <th>Nr.p.k.</th>
                 <th>Nosaukums</th>
                 <th>Saite</th>
@@ -73,6 +74,7 @@
         {%if ns.esosais != linija.id %}
               </tr>
               <tr>
+                <td><form><input type="hidden" name="dzestko" value="{{linija.id}}"><input type="submit" name="dzest" value="Dzēst"></form> </td>
                 {%set ns.esosais = linija.id %}
                 {%set ns.kategorija = linija.kategorija%}
                 <td>{{ns.rinda}}</td>
