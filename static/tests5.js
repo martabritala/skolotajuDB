@@ -9,7 +9,7 @@ function ieladejotPievienot(saites){
     console.log(saites)
 }
 
-const tabula = ["viens","divi","tris","cetri","pieci","sesi","septini","astoni"];
+const tabula = ["<h4>Maksa</h4></br><ul><li>Bezmaksas - viss saturs ir par brīvu</li><li>Daļēji maksas - pamatsaturs ir par brīvu, bet daļa satura/funkcionalitātes - par maksu</li></ul>","divi","tris","cetri","pieci","sesi","septini","astoni"];
 
 function inforadit(id){
     console.log(id);
