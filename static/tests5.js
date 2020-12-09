@@ -14,6 +14,7 @@ const tabula = ["<h4>Maksa</h4></br><ul><li>Bezmaksas - viss saturs ir par brīv
 function inforadit(id){
     console.log(id);
     let vieta = document.getElementById("infovieta");
+    vieta.innerHTML="";
     let smukumi = document.createElement("div");
     smukumi.classList.add('bg-info');
     smukumi.innerHTML=tabula[id-1];
