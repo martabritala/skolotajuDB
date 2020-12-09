@@ -1,7 +1,6 @@
 function ieladejotPievienot(saites){
-    for (let objekts in document.getElementsByTagName("img")){
+    for(let objekts=0;objekts<7;objekts++){
         console.log(objekts, "bus")
-        console.log(objekts.id, "pievienot")
         objekts.onclick = (evt) => {
             inforadit(objekts);
         }
