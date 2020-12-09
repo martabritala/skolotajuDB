@@ -16,7 +16,7 @@ function inforadit(id){
     let vieta = document.getElementById("infovieta");
     vieta.innerHTML="";
     let smukumi = document.createElement("div");
-    smukumi.classList.add('bg-info');
+    smukumi.classList.add('bg-light');
     smukumi.innerHTML=tabula[id-1];
     vieta.appendChild(smukumi);
 
