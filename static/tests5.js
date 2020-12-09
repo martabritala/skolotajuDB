@@ -9,7 +9,7 @@ function ieladejotPievienot(){
 const tabula = ["viens","divi","tris","cetri","pieci","sesi","septini","astoni"];
 
 function inforadit(id){
-    document.getElementById("infovieta").innerHTML = tabula[int(id)-1]
+    document.getElementById("infovieta").innerHTML = tabula[id-1]
 
 }
 
