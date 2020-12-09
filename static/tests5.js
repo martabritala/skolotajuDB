@@ -1,9 +1,10 @@
 function ieladejotPievienot(saites){
     for(let objekts=0;objekts<7;objekts++){
+        let lieta = document.getElementById('img'+objekts)
         console.log(objekts, "bus")
-        objekts.onclick = (evt) => {
+        lieta.addEventListener('click',function = (eve) =>{
             inforadit(objekts);
-        }
+        })
     }
     console.log(saites)
 }
