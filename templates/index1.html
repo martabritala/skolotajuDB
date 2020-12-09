@@ -45,7 +45,7 @@
         <tr>
           {%for kategorija in kategs%}
           <th>
-              {{kategorija.name}}<img id="{{loop.index}}" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Info par kategoriju" src="{{url_for('static', filename = 'info_logo.png')}}" style="cursor: pointer;" onclick="inforadit()">
+              {{kategorija.name}}<img id="{{loop.index}}" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Info par kategoriju" src="{{url_for('static', filename = 'info_logo.png')}}" style="cursor: pointer;">
           </th>
           {%endfor%}
         </tr>
