@@ -1,5 +1,5 @@
 function ieladejotPievienot(saites){
-    for(let objekts=1;objekts<8;objekts++){
+    for(let objekts=1;objekts<9;objekts++){
         let lieta = document.getElementById('img'+objekts)
         console.log(objekts, "bus")
         lieta.addEventListener('click',function(eve) {
@@ -12,8 +12,12 @@ function ieladejotPievienot(saites){
 const tabula = ["viens","divi","tris","cetri","pieci","sesi","septini","astoni"];
 
 function inforadit(id){
-    console.log(id)
-    document.getElementById("infovieta").innerHTML = tabula[id-1]
+    console.log(id);
+    let vieta = document.getElementById("infovieta");
+    let smukumi = document.createElement("div");
+    smukumi.classList.add('bg-info');
+    smukumi.innerHTML=tabula[id-1];
+    vieta.appendChild(smukumi);
 
 }
 
