@@ -1,4 +1,4 @@
-function ieladejotPievienot(){
+function ieladejotPievienot(saites){
     for (let objekts in document.getElementsByTagName("img")){
         console.log(objekts)
         console.log(objekts.id, "pievienot")
@@ -6,6 +6,7 @@ function ieladejotPievienot(){
             inforadit(objekts.id);
         }
     }
+    console.log(saites)
 }
 
 const tabula = ["viens","divi","tris","cetri","pieci","sesi","septini","astoni"];
