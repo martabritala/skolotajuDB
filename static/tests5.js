@@ -13,6 +13,7 @@ function ieladejotPievienot(saites){
 var saitesvisas = [];
 
 function dropdovnis(saitesgabals){
+    if(saitesgabals.length<9){return}
     let vieta = document.getElementById("infovieta");
     vieta.innerHTML = "<h4>Pašlaik pievienotas saites: </h4>";
     let isais = saitesgabals.split('//')[1];
@@ -21,7 +22,7 @@ function dropdovnis(saitesgabals){
     for (let saite in infogabals){
         vieta.innerHTML = vieta.innerHTML +"</br>" + saite;
     }
-
+    return
 }
 
 function izlaseNoSaitem(saites,teksts){
