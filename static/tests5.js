@@ -19,7 +19,7 @@ function dropdovnis(saitesgabals){
     let nosaukums = isais.split('.')[isais.split('.').length()];
     let infogabals = izlaseNoSaitem(saitesvisas,nosaukums)
     for (let saite in infogabals){
-        vieta.innerHTML + ="</br>" + saite;
+        vieta.innerHTML = vieta.innerHTML +"</br>" + saite;
     }
 
 }
