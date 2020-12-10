@@ -22,7 +22,7 @@ function dropdovnis(saitesgabals){
     let infogabals = izlaseNoSaitem(saitesvisas,nosaukums);
     console.log(infogabals);
     for (let saite in infogabals){
-        vieta.innerHTML = vieta.innerHTML +"</br>" + saite;
+        vieta.innerHTML = vieta.innerHTML +"</br>" + infogabals[saite];
     }
     return
 }
