@@ -18,6 +18,7 @@ app.jinja_options['extensions'].append('jinja2.ext.loopcontrols')
 def index_lapa():
     if request.method=='POST':
         saites = data.saisuSaraksts()
+        print(saites)
         Nosaukums = request.form['nosaukums']
         print(Nosaukums)
         kverijaparametri1="'"+request.form['saite']+"'"','"'"+request.form['nosaukums']+"'"','"'"+request.form['anotacija']+"'"','"'"+request.form['Autors']+"'"
@@ -31,6 +32,7 @@ def index_lapa():
         kategorijas=data.nolasit(1)
     else:
         saites = data.saisuSaraksts()
+        print(saites)
         elementi=data.nolasit(2)
         kategorijas=data.nolasit(1)
     return render_template('index1.html',teksts=elementi, kategs=kategorijas, saraksts=saites)
