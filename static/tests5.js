@@ -17,8 +17,8 @@ function dropdovnis(saitesgabals){
     let vieta = document.getElementById("infovieta");
     vieta.innerHTML = "<h4>Pašlaik pievienotas saites: </h4>";
     let isais = saitesgabals.split('//')[1];
-    let nosaukums = isais.split('.')[isais.split('.').length];
-    console.log(saitesvisas);
+    let nosaukums = isais.split('.')[isais.split('.').length-1];
+    console.log(nosaukums);
     let infogabals = izlaseNoSaitem(saitesvisas,nosaukums);
     console.log(infogabals);
     for (let saite in infogabals){
