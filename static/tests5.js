@@ -22,6 +22,7 @@ function dropdovnis(saitesgabals){
     let isais = saitesgabals.split('/')[2];
     console.log(isais);
     let nosaukums = isais.trimLeft('w');
+    console.log(nosaukums);
     console.log(nosaukums.trimLeft('\W'));
     let infogabals = izlaseNoSaitem(saitesvisas,nosaukums.trimLeft('\W'));
     console.log(infogabals);
