@@ -13,13 +13,17 @@ function ieladejotPievienot(saites){
 var saitesvisas = [];
 
 function dropdovnis(saitesgabals){
-    if(saitesgabals.length<9){
-        document.getElementById("infovieta").innerHTML = "";
-        return}
     let vieta = document.getElementById("infovieta");
+    if(saitesgabals.length<9){
+        vieta.innerHTML = "";
+        return
+    }
     vieta.innerHTML = "<h4>Pašlaik pievienotas saites: </h4>";
     let isais = saitesgabals.split('//')[1];
-    let nosaukums = isais.split('.')[isais.split('.').length-1];
+    let nosaukums = isais.split('.')[0];
+    if (nosaukums = 'www' && isais.split('.').length > 1) {
+        nosaukums = isis.split('.')[1];
+    }
     console.log(nosaukums);
     let infogabals = izlaseNoSaitem(saitesvisas,nosaukums);
     console.log(infogabals);
