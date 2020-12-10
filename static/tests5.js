@@ -6,8 +6,22 @@ function ieladejotPievienot(saites){
             inforadit(objekts);
         })
     }
-    console.log(izlaseNoSaitem(saites,'www'))
+    saitesvisas = saites;
     // oninput!!!
+}
+
+var saitesvisas = [];
+
+function dropdovnis(saitesgabals){
+    let vieta = document.getElementById("infovieta");
+    vieta.innerHTML = "<h4>Pašlaik pievienotas saites: </h4>";
+    let isais = saitesgabals.split('//')[1];
+    let nosaukums = isais.split('.')[isais.split('.').length()];
+    let infogabals = izlaseNoSaitem(saitesvisas,nosaukums)
+    for (let saite in infogabals){
+        vieta.innerHTML + ="</br>" + saite;
+    }
+
 }
 
 function izlaseNoSaitem(saites,teksts){
