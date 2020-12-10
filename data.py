@@ -149,13 +149,9 @@ def dzest(id):
 def saisuSaraksts():
     conn = psycopg2.connect(dsn)
     cur = conn.cursor()
-    kverijs = """
-    select array_agg(transform(row_to_json(t)))
-    from (
-    SELECT url FROM saites) t;
-    """
+    kverijs = """SELECT url FROM saites"""
     cur.execute(kverijs)
-    saraksts=cur.fetchall()[0][0]
+    saraksts=[r[0] for r in cur.fetchall()]
     conn.commit()
     cur.close()
     conn.close()
