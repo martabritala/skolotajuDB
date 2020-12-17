@@ -63,7 +63,7 @@ def nolasit(parametri = 0):
     conn = psycopg2.connect(dsn)
     cur = conn.cursor()
     if parametri==0: #Šeit nolasās pilnīgi visi dati
-        kverijs='''SELECT id, url, nosaukums, atsauksme, autors, tag_name, tagi.tag_id, seciba, kategorija FROM saites LEFT JOIN tagi_saites ON saites.id=tagi_saites.saite_id LEFT JOIN tagi ON tagi_saites.tag_id=tagi.tag_id ORDER BY id ASC, kategorija ASC, tagi.tag_id ASC '''
+        kverijs='''SELECT id, url, nosaukums, atsauksme, autors, tag_name, tagi.tag_id, seciba, kategorija FROM saites LEFT JOIN tagi_saites ON saites.id=tagi_saites.saite_id LEFT JOIN tagi ON tagi_saites.tag_id=tagi.tag_id ORDER BY id DESC, kategorija ASC, tagi.tag_id ASC '''
         cur.execute(kverijs)
         r = [dict((cur.description[i][0], value) \
                for i, value in enumerate(row)) for row in cur.fetchall()]
@@ -108,7 +108,7 @@ def tekstapstrade(teksts, ietvars, saraksts):
             jaunaiskverijsbeigas = """
                 ) AS a 
                 LEFT JOIN tagi_saites ON a.id=tagi_saites.saite_id LEFT JOIN tagi ON tagi_saites.tag_id = tagi.tag_id
-            ORDER BY id ASC, kategorija ASC, tagi.seciba ASC
+            ORDER BY id DESC, kategorija ASC, tagi.seciba ASC
             """
 
             jaunaiskverijs = jaunaiskverijssakums + jaunaiskverijsvidus + jaunaiskverijsbeigas
@@ -122,7 +122,7 @@ def tekstapstrade(teksts, ietvars, saraksts):
         jaunaiskverijsbeigas = """
                 ) AS a
                 LEFT JOIN tagi_saites ON a.id=tagi_saites.saite_id LEFT JOIN tagi ON tagi_saites.tag_id = tagi.tag_id
-            ORDER BY id ASC, kategorija ASC, tagi.seciba ASC) AS tabula WHERE
+            ORDER BY id DESC, kategorija ASC, tagi.seciba ASC) AS tabula WHERE
             """
         if ietvars == '1':
             jaunaiskverijsbeigas += """tabula.nosaukums LIKE '%{}%' """.format(teksts)
