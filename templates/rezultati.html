@@ -34,11 +34,9 @@
                 <table class="table-sm table-bordered">
                   <tr>
                     {%for kategorija in kategs%}
-                    {%for vards in kategorija%}
                     <th>
-                        {{kategorija[vards]}}<img id="img{{loop.index}}" src="{{url_for('static', filename = 'info_logo.png')}}" style="cursor: pointer;" >
+                        {{kategorija.name}}<img id="img{{loop.index}}" src="{{url_for('static', filename = 'info_logo.png')}}" style="cursor: pointer;" >
                     </th>
-                    {%endfor%}
                     {%endfor%}
                   </tr>
                   <tr>
