@@ -17,7 +17,8 @@ app = Flask('app')
 @app.route('/', methods=['POST','GET'])
 def index_lapa():
     if request.method=='POST':
-        saites = data.saisuSaraksts()
+        # saites = data.saisuSaraksts()
+        saites = ["Nekas"]
         print(saites)
         Nosaukums = request.form['nosaukums']
         print(Nosaukums)
@@ -31,10 +32,13 @@ def index_lapa():
         elementi=data.nolasit(2)
         kategorijas=data.nolasit(1)
     else:
-        saites = data.saisuSaraksts()
+        # saites = data.saisuSaraksts()
+        saites = ["Nekas"]
         print(saites)
-        elementi=data.nolasit(2)
-        kategorijas=data.nolasit(1)
+        elementi=[]
+        kategorijas=["cits"]
+        # elementi=data.nolasit(2)
+        # kategorijas=data.nolasit(1)
     return render_template('index1.html',teksts=elementi, kategs=kategorijas, saraksts=saites)
 
 # @app.route('/gatavs', methods=['POST', 'GET'])
@@ -84,9 +88,15 @@ def meklet():
             kategorijas=data.nolasit(1)
             elementi=data.nolasit(2)
     else:
-        rezultats=data.nolasit()
-        kategorijas=data.nolasit(1)
-        elementi=data.nolasit(2)
+        # rezultats=data.nolasit()
+        # kategorijas=data.nolasit(1)
+        # elementi=data.nolasit(2)
+        rezultats=[]
+        kategorijas=["es"]
+        elementi=[]
     return render_template('rezultati.html', linijas=rezultats, kategs=kategorijas, teksts=elementi)
 
 
+
+if __name__ == '__main__':
+    app.run(port = 5000)
